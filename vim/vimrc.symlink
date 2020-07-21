@@ -48,6 +48,12 @@ cabbr <expr> %% expand('%:p:h')
 "END MY PREFERENCES
 
 
+set guifont=Menlo\ Regular:h11
+
+set background=dark
+
+
+
 "source $VIMRUNTIME/vimrc_example.vim
 
 
