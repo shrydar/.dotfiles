@@ -1,6 +1,6 @@
 [user]
   name = Christopher Phillips
-  email = christopher.phillips@agworld.com
+	email = shrydar@jaruth.com
 [alias]
   co = checkout
   hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
@@ -12,6 +12,7 @@
 [core]
   editor = vim
   autocrlf = input
+  excludesfile = /Users/christopher/.gitignore
 [github]
   user = shrydar
 [merge]
@@ -37,7 +38,16 @@
   cmd = diffmerge $LOCAL $REMOTE
 [pull]
   ff = true
+	rebase = false
 [rerere]
   enabled = true
 [oh-my-zsh]
   hide-dirty = 1
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[pager]
+	diff = false
+	log = false
