@@ -12,9 +12,6 @@ set nu
 "Don't wrap text.
 set wrap!
 
-"Set a nice Font
-set guifont=Bitstream\ Vera\ Sans\ Mono:h10
-
 "Good tabs
 set autoindent
 set shiftwidth=2
@@ -51,6 +48,9 @@ cabbr <expr> %% expand('%:p:h')
 set guifont=Menlo\ Regular:h11
 
 set background=dark
+colo industry
+hi Normal guibg=#180020
+highlight LineNr guifg=#664444
 
 
 
@@ -178,3 +178,7 @@ set paste " Disable auto indenting. Annoying when pasting. Although may want to 
 
 " Colorschemes are downloaded to: ~/.vim/colors
 " colorscheme PerfectDark
+"
+"
+" map ,. :sp %:p:h<CR>
+map ,. :sp %:p:h
