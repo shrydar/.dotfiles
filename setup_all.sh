@@ -2,8 +2,6 @@
 pushd $HOME/.dotfiles
 
 source ./functions.sh
-source ./check_os.sh
-echo System is $OS
 
 echo 'Checking requirements...'
 command -v curl >/dev/null 2>&1 || { echo >&2 "  Please install curl to run this script."; exit 1; }
