@@ -6,6 +6,8 @@ source $HOME/.dotfiles/zsh/zsh_personal
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+export PATH=$PATH:~/bin
+
 # Add Diffmerge to path:
 export PATH=$PATH:/Applications/DiffMerge.app/Contents/MacOS
 
@@ -87,6 +89,7 @@ osx
 rake
 rbenv
 ruby
+terraform
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -129,20 +132,6 @@ export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
 export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
 
-#####################################################################
-# Commenting out all RVM stuff since switching to rbenv.
-#####################################################################
-
-# rvm needs to be at the bottom of the file in case there are other lines in .[ba|z]shrc that redefine path:
-# [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function into a shell session
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-# export PATH="$PATH:$HOME/.rvm/bin"
-
-#####################################################################
-# Commenting out all RVM stuff since switching to rbenv.
-#####################################################################
-
 # Add imagemagick to the PATH for website for things like POSTing a layer, with an image:
 export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 
@@ -152,7 +141,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # Postgres commands like `psql`:
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.5/bin
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/12/bin
 
 # Required for rbenv:
 eval "$(rbenv init -)"
@@ -163,3 +152,8 @@ export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 
 #MacVim commandline utils
 export PATH=/Applications/MacVim.app/Contents/bin:$PATH
+
+# note that this and various other things should really be in .zshenv
+# but that's a problem for another day.
+# cf https://carlosroso.com/the-right-way-to-migrate-your-bash-profile-to-zsh/
+export PYTHONPATH=~/bin:$PYTHONPATH
